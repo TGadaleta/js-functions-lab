@@ -9,9 +9,9 @@ Exercise 1 has been completed for you:
 */
 
 const maxOfTwoNumbers = (x, y) => {
-    if (x >= y) {
-      return x;
-    } else {
+    if (x >= y) { //if x is bigger or equal than y return x
+      return x; 
+    } else { //if x is not bigger than y, y must be bigger, so return y
       return y;
     }
   }
@@ -30,8 +30,8 @@ Complete the exercise in the space below:
 */
 
 const isAdult = (age) => {
-    if (age >= 18) return 'Adult'
-    else return 'Minor'
+    if (age >= 18) return 'Adult' //if age is greater than or equal to 18 return Adult
+    else return 'Minor' //if age is not equal or greater than 18, must be minor
 }
 
 console.log('Exercise 2 Result:', isAdult(21));
@@ -50,8 +50,9 @@ Complete the exercise in the space below:
 */
 
 const isCharAVowel = (char) => {
+    //if statement checks if char is any vowel since we are using or
     if (char === 'a' || char === 'e' || char === 'i' || char ==='o' || char === 'u') return true
-    else return false
+    else return false //if it's not a vowel, then return false
 }
 
 console.log('Exercise 3 Result:', isCharAVowel("a"))
@@ -68,9 +69,8 @@ should return 'johnsmith@example.com'.
 Complete the exercise in the space below:
 */
 const generateEmail = (name, domain) => {
-  return `${name}@${domain}`
+  return `${name}@${domain}` //using template literal to add an @ between name and domain
 }
-
 
 console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
 
@@ -86,7 +86,7 @@ Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
 Complete the exercise in the space below:
 */
 const greetUser = (name, time) => {
-  return `Good ${time}, ${name}`
+  return `Good ${time}, ${name}` //using template literal to place time and name in the right positions
 }
 
 console.log('Exercise 5 Result:', greetUser("Frank", "evening"));
@@ -103,10 +103,11 @@ Complete the exercise in the space below:
 */
 
 const maxOfThree = (num1,num2,num3) => {
-  let maxNum = num1
-  if (maxNum < num2) maxNum = num2
-  if (maxNum < num3) maxNum = num3
-  return maxNum
+  let maxNum = num1 //sets our max number to num1 because we need to compare
+  if (maxNum < num2) maxNum = num2 //if num1 is less than num2, replace num1 with num2 in variable maxNum
+  if (maxNum < num3) maxNum = num3//since maxNum is either num1 (because the previous if statement was false) or num2,
+  //comparing maxNum to num3 will either keep maxNum as is (num1 or num2 whichever is bigger) or change the value to num3
+  return maxNum //regardless of the numbers, maxNum will always be the greatest number at the end
 }
 
 console.log('Exercise 6 Result:', maxOfThree(50, 10, 20));
@@ -123,7 +124,7 @@ Example: calculateTip(50, 20) should return 10.
 Complete the exercise in the space below:
 */
 const calculateTip = (bill, tipPer) => {
-  let tipAmount = bill * (tipPer/100)
+  let tipAmount = bill * (tipPer/100) //since the tip is in percentage, to get the amount we need to tip we must divide it by 100
   return tipAmount
 }
 
@@ -143,12 +144,12 @@ Example: convertTemperature(32, 'F') should return 0 (Celsius).
 Complete the exercise in the space below:
 */
 const convertTemperature = (temp,scale) => {
-  if (scale === 'F') return (temp - 32) / 1.8
-  if (scale === 'C') return (temp * 1.8) + 32
-  else return 'Incorrect scale.'
+  if (scale === 'F') return (temp - 32) / 1.8 //we need the parenthesis to make sure the conversion happens correctly
+  if (scale === 'C') return temp * 1.8 + 32 //no need for parenthesis for this conversion
+  else return 'Incorrect scale.' //if the scale is not 'F' or 'C', this returns an error statement
 }
 
-console.log('Exercise 8 Result:', convertTemperature(32, "F"));
+console.log('Exercise 8 Result:', convertTemperature(32, "C"));
 
 /*
 Exercise 9: basicCalculator()
@@ -166,11 +167,11 @@ Example: basicCalculator(10, 5, 'subtract') should return 5.
 Complete the exercise in the space below:
 */
 const basicCalculator = (num1, num2, op) => {
-  if (op === 'add') return num1 + num2
-  if (op === 'subtract') return num1 - num2
-  if (op === 'multiply') return num1 * num2
-  if (op === 'divide') return num1 / num2
-  else return 'Not an operation.'
+  if (op === 'add') return num1 + num2 //adds if op is add
+  if (op === 'subtract') return num1 - num2 //subtracts if op is subtract
+  if (op === 'multiply') return num1 * num2 //multiplies if op is multiply
+  if (op === 'divide') return num1 / num2 //divides if op is divide
+  else return 'Not an operation.' //if the op is not one of the four above, returns this error statement
 }
 
 console.log('Exercise 9 Result:', basicCalculator(10, 5, "divide"));
@@ -190,15 +191,14 @@ Example: calculateGrade(100) should return A.
 Complete the exercise in the space below:
 */
 const calculateGrade = grade => {
-  if (grade >= 90) return 'A'
-  if (grade >= 80) return 'B'
-  if (grade >= 70) return 'C'
-  if (grade >= 60) return 'D'
-  return 'F'
+  if (grade >= 90) return 'A' //if grade is above 90, returns A, and since it returns, it does not check the other statements
+  if (grade >= 80) return 'B' //if grade is above 80 but under 90, returns B, and does not check other statements
+  if (grade >= 70) return 'C' //same for C except it is between 70 and 80
+  if (grade >= 60) return 'D' //same for D except it is between 60 and 70
+  return 'F' //if all the other if statements are false, it will return and F becasue grade must be lower than 60
 }
 
 console.log('Exercise 10 Result:', calculateGrade(99));
-
 
 /*
 Exercise 11: createUsername()
@@ -216,13 +216,12 @@ Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
 Complete the exercise in the space below:
 */
 const createUsername = (firstName, lastName) => {
-  let first3 = firstName.substring(0,3)
-  let last3 = lastName.substring(0,3)
-  let fullName = firstName+lastName
-  let fullNameCount = fullName.length
-  return first3+last3+fullNameCount
+  let first3 = firstName.substring(0,3) //collects the first three letters of the first name
+  let last3 = lastName.substring(0,3) //collects the first three letters of the last name
+  let fullName = firstName+lastName //adds the first and last name strings together to one string
+  let fullNameCount = fullName.length //the method .length gets the amount of characters in the combined string
+  return first3+last3+fullNameCount //concatonates the required strings to make our username string
 }
-
 
 console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
 
@@ -234,8 +233,8 @@ This function should return the count of arguments passed to it when called.
 
 Complete the exercise in the space below:
 */
-const numArgs = (...args) => {
-  console.log(args.length)
-}
+const numArgs = (...args) => { //... allows for any number of arguments to be passed into the function
+  console.log(args.length) //args is an array where each element is an argument passed into the function
+}                  //.length is a method that gives us the amount of elements in the array
 
 console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
